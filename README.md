@@ -6,7 +6,9 @@ A modern, decentralized prediction market platform built on Sonic blockchain wit
 
 ## 🚀 Live Demo
 
-**🌐 [Try Horizon](http://localhost:3000)** (when running locally)
+**🌐 [Try Horizon](https://horizon-demo.vercel.app)** - Live demo deployed on Vercel
+
+**🔧 [Local Development](http://localhost:3000)** - Run locally with `pnpm dev`
 
 ## ✨ Features
 
