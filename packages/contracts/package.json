@@ -1,0 +1,12 @@
+{
+  "name": "@sonic-prediction-market/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "deploy:core": "forge script script/DeployCore.s.sol --rpc-url sonic_mainnet --broadcast --verify",
+    "deploy:demo": "forge script script/DeployDemoMarkets.s.sol --rpc-url sonic_mainnet --broadcast",
+    "clean": "forge clean"
+  }
+}
