@@ -8,6 +8,12 @@ export interface DemoMarket {
   marketType: 'binary' | 'ternary';
   outcomes: string[];
   currentProbabilities: number[];
+  /**
+   * Convenience field for binary markets where we want a single
+   * YES probability value. When not explicitly set, the UI will
+   * derive YES probability from currentProbabilities[0].
+   */
+  yesProbability?: number;
   totalLiquidity: number;
   totalVolume: number;
   participants: number;
