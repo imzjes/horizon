@@ -92,14 +92,16 @@ export default function MarketPage() {
   const needsApproval = !isDemoMode && validEventInfo && !hasAllowance(validEventInfo.ammAddress as `0x${string}`, requiredAllowance);
 
   // Create unified market data object for display
+  // In demo mode we don't track per-user positions, so we use
+  // sensible defaults and derive values from the demo market.
   const displayMarketData = isDemoMode ? {
-    yesProbability: demoMarket.yesProbability,
-    liquidityUsd: demoMarket.liquidityUsd,
-    volumeUsd: demoMarket.volumeUsd,
-    userLpBalance: userPosition?.lpTokens || BigInt(0),
-    userLpShare: userPosition ? Number(userPosition.lpTokens * BigInt(100) / demoMarket.totalLpSupply) : 0,
-    userYesBalance: userPosition?.yesTokens || BigInt(0),
-    userNoBalance: userPosition?.noTokens || BigInt(0),
+    yesProbability: demoMarket.yesProbability ?? demoMarket.currentProbabilities[0],
+    liquidityUsd: demoMarket.liquidityUsd ?? demoMarket.totalLiquidity,
+    volumeUsd: demoMarket.volumeUsd ?? demoMarket.totalVolume,
+    userLpBalance: BigInt(0),
+    userLpShare: 0,
+    userYesBalance: BigInt(0),
+    userNoBalance: BigInt(0),
   } : marketData;
 
   const handleBuyYes = async () => {
