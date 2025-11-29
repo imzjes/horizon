@@ -1,0 +1,124 @@
+{
+  "games": [
+    {
+      "id": "nba_lal_gsw_20250109",
+      "league": "NBA",
+      "startsAt": "2025-01-09T02:30:00.000Z",
+      "home": "Golden State Warriors",
+      "away": "Los Angeles Lakers",
+      "venue": "Chase Center",
+      "sourceUrl": "https://www.espn.com/nba/game/_/gameId/401704938",
+      "allowsDraw": false
+    },
+    {
+      "id": "nba_bos_mia_20250109",
+      "league": "NBA", 
+      "startsAt": "2025-01-09T20:00:00.000Z",
+      "home": "Miami Heat",
+      "away": "Boston Celtics",
+      "venue": "FTX Arena",
+      "sourceUrl": "https://www.espn.com/nba/game/_/gameId/401704939",
+      "allowsDraw": false
+    },
+    {
+      "id": "nba_den_dal_20250110",
+      "league": "NBA",
+      "startsAt": "2025-01-10T01:00:00.000Z",
+      "home": "Dallas Mavericks", 
+      "away": "Denver Nuggets",
+      "venue": "American Airlines Center",
+      "sourceUrl": "https://www.espn.com/nba/game/_/gameId/401704940",
+      "allowsDraw": false
+    },
+    {
+      "id": "nfl_buf_rams_20250112",
+      "league": "NFL",
+      "startsAt": "2025-01-12T21:25:00.000Z",
+      "home": "Los Angeles Rams",
+      "away": "Buffalo Bills",
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/nfl/game/_/gameId/401671779",
+      "allowsDraw": false
+    },
+    {
+      "id": "nfl_det_gb_20250112",
+      "league": "NFL",
+      "startsAt": "2025-01-12T01:15:00.000Z", 
+      "home": "Green Bay Packers",
+      "away": "Detroit Lions",
+      "venue": "Lambeau Field",
+      "sourceUrl": "https://www.espn.com/nfl/game/_/gameId/401671780",
+      "allowsDraw": false
+    },
+    {
+      "id": "nfl_kc_lac_20250119",
+      "league": "NFL",
+      "startsAt": "2025-01-19T21:20:00.000Z",
+      "home": "Los Angeles Chargers",
+      "away": "Kansas City Chiefs", 
+      "venue": "SoFi Stadium",
+      "sourceUrl": "https://www.espn.com/nfl/game/_/gameId/401671781",
+      "allowsDraw": false
+    },
+    {
+      "id": "nba_phx_por_20250111",
+      "league": "NBA",
+      "startsAt": "2025-01-11T03:00:00.000Z",
+      "home": "Portland Trail Blazers",
+      "away": "Phoenix Suns",
+      "venue": "Moda Center",
+      "sourceUrl": "https://www.espn.com/nba/game/_/gameId/401704941",
+      "allowsDraw": false
+    },
+    {
+      "id": "nba_mil_brk_20250112",
+      "league": "NBA",
+      "startsAt": "2025-01-12T00:30:00.000Z",
+      "home": "Brooklyn Nets",
+      "away": "Milwaukee Bucks",
+      "venue": "Barclays Center",
+      "sourceUrl": "https://www.espn.com/nba/game/_/gameId/401704942",
+      "allowsDraw": false
+    },
+    {
+      "id": "nfl_pit_phi_20250119",
+      "league": "NFL",
+      "startsAt": "2025-01-19T18:00:00.000Z",
+      "home": "Philadelphia Eagles",
+      "away": "Pittsburgh Steelers",
+      "venue": "Lincoln Financial Field",
+      "sourceUrl": "https://www.espn.com/nfl/game/_/gameId/401671782",
+      "allowsDraw": false
+    },
+    {
+      "id": "nba_atl_chi_20250113",
+      "league": "NBA", 
+      "startsAt": "2025-01-13T01:00:00.000Z",
+      "home": "Chicago Bulls",
+      "away": "Atlanta Hawks",
+      "venue": "United Center",
+      "sourceUrl": "https://www.espn.com/nba/game/_/gameId/401704943",
+      "allowsDraw": false
+    },
+    {
+      "id": "mls_lafc_sea_20250315",
+      "league": "MLS",
+      "startsAt": "2025-03-15T23:00:00.000Z",
+      "home": "Los Angeles FC",
+      "away": "Seattle Sounders FC",
+      "venue": "BMO Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/game/_/gameId/123456",
+      "allowsDraw": true
+    },
+    {
+      "id": "mls_atl_mia_20250316",
+      "league": "MLS", 
+      "startsAt": "2025-03-16T20:30:00.000Z",
+      "home": "Inter Miami CF",
+      "away": "Atlanta United FC",
+      "venue": "DRV PNK Stadium",
+      "sourceUrl": "https://www.espn.com/soccer/game/_/gameId/123457",
+      "allowsDraw": true
+    }
+  ]
+}

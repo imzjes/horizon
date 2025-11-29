@@ -76,7 +76,8 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Only ignore the root-level public folder, not app-specific ones
+/public
 
 # Storybook build outputs
 .out
