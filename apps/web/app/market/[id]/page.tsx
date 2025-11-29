@@ -601,7 +601,7 @@ export default function MarketPage() {
                   <h3 className="text-lg font-bold text-white mb-4">Market Resolved</h3>
                   <div className="bg-green-900/20 border border-green-600 rounded-lg p-4">
                     <div className="text-green-400 font-medium mb-2">
-                      Outcome: {demoMarket.resolvedOutcome ? 'YES' : 'NO'}
+                      Outcome: {(demoMarket.resolvedOutcome || demoMarket.outcomes?.[0] || 'YES').toUpperCase()}
                     </div>
                     <p className="text-green-300 text-sm">
                       This market has been resolved. In a real market, you would be able to redeem your positions here.

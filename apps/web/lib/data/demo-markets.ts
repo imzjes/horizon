@@ -42,6 +42,11 @@ export interface DemoMarket {
    * with on-chain markets.
    */
   status?: 'active' | 'resolved' | 'cancelled';
+  /**
+   * Optional flag describing which outcome won when status is
+   * resolved. Kept flexible to support binary/ternary markets.
+   */
+  resolvedOutcome?: string;
   priceHistory: Array<{
     timestamp: string;
     probabilities: number[];
