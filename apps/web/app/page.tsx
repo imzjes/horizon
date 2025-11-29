@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Navigation } from "../components/Navigation";
-import lottie from "lottie-web";
 
 export default function Home() {
   const lottieRef = useRef<HTMLDivElement | null>(null);
   const [lottieData, setLottieData] = useState<any>(null);
-  const [lottieInstance, setLottieInstance] = useState<any>(null);
+  const [lottieLib, setLottieLib] = useState<any | null>(null);
 
   // Load Lottie animation
   useEffect(() => {
@@ -20,24 +19,40 @@ export default function Home() {
       );
   }, []);
 
-  // Initialize Lottie animation
+  // Load Lottie library on the client only
   useEffect(() => {
-    if (lottieData && lottieRef.current && !lottieInstance) {
-      const instance = lottie.loadAnimation({
-        container: lottieRef.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        animationData: lottieData
-      });
-      setLottieInstance(instance);
-    }
+    let active = true;
+    import("lottie-web")
+      .then((mod) => {
+        if (!active) return;
+        const lib = mod.default ?? mod;
+        setLottieLib(lib);
+      })
+      .catch((error) =>
+        console.error("Error loading Lottie library:", error)
+      );
+
     return () => {
-      if (lottieInstance) {
-        lottieInstance.destroy();
-      }
+      active = false;
     };
-  }, [lottieData, lottieInstance]);
+  }, []);
+
+  // Initialize Lottie animation once data + library are ready
+  useEffect(() => {
+    if (!lottieLib || !lottieData || !lottieRef.current) return;
+
+    const instance = lottieLib.loadAnimation({
+      container: lottieRef.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: lottieData
+    });
+
+    return () => {
+      instance.destroy();
+    };
+  }, [lottieLib, lottieData]);
 
   // Simple on-scroll reveal animations
   useEffect(() => {
