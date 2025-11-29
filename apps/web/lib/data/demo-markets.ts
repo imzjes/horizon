@@ -30,6 +30,12 @@ export interface DemoMarket {
   creator: string;
   imageUrl?: string;
   game?: Game;
+  /**
+   * Optional primary source URL used in the market details
+   * view for "Rules & Resolution" linking. For sports markets
+   * this typically mirrors the underlying game's sourceUrl.
+   */
+  primarySource?: string;
   priceHistory: Array<{
     timestamp: string;
     probabilities: number[];
