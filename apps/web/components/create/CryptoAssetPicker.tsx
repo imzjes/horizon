@@ -67,8 +67,8 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
     return (
       <div className="space-y-4">
         <div className="text-center py-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto"></div>
-          <p className="text-gray-400 mt-2">Loading crypto assets...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-400 mx-auto"></div>
+          <p className="text-gray-400 mt-3 text-sm">Loading crypto assets...</p>
         </div>
       </div>
     );
@@ -77,10 +77,10 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
   if (error) {
     return (
       <div className="text-center py-8">
-        <p className="text-red-400 mb-4">{error}</p>
+        <p className="text-red-400 mb-4 text-sm">{error}</p>
         <button
           onClick={loadAssets}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+          className="px-4 py-2 rounded-full bg-blue-600 text-white text-sm hover:bg-blue-500 transition-colors"
         >
           Retry
         </button>
@@ -97,7 +97,7 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
           placeholder="Search by symbol or name (e.g., BTC, Bitcoin)..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 pl-10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+          className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-3 pl-10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 backdrop-blur"
         />
         <svg
           className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
@@ -110,7 +110,7 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
       </div>
 
       {/* Assets List */}
-      <div className="space-y-3 max-h-96 overflow-y-auto">
+      <div className="space-y-3 max-h-96 overflow-y-auto pr-1">
         {filteredAssets.map((asset) => {
           const isSelected = selectedAsset?.id === asset.id;
           
@@ -119,10 +119,10 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
               key={asset.id}
               onClick={() => onSelect(asset)}
               className={`
-                cursor-pointer rounded-2xl p-4 border transition-all
+                cursor-pointer rounded-2xl p-4 border transition-all backdrop-blur
                 ${isSelected 
-                  ? 'bg-blue-600/20 border-blue-500 shadow-lg shadow-blue-500/25'
-                  : 'bg-gray-800 border-gray-600 hover:border-gray-500 hover:bg-gray-750'
+                  ? 'bg-blue-900/30 border-blue-400 shadow-lg shadow-blue-500/25'
+                  : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-blue-400'
                 }
               `}
             >
@@ -141,8 +141,8 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
                   {/* Asset Info */}
                   <div>
                     <div className="flex items-center space-x-2">
-                      <span className="text-lg font-semibold text-white">{asset.name}</span>
-                      <span className="text-sm font-medium text-gray-400 uppercase">
+                      <span className="text-lg font-medium text-white">{asset.name}</span>
+                      <span className="text-xs font-medium text-gray-400 uppercase">
                         {asset.symbol}
                       </span>
                     </div>
@@ -153,8 +153,8 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
                 </div>
                 
                 {/* Price */}
-                <div className="text-right">
-                  <div className="text-lg font-semibold text-white">
+                  <div className="text-right">
+                    <div className="text-lg font-semibold text-white">
                     {formatPrice(asset.current_price)}
                   </div>
                   {isSelected && (
@@ -174,12 +174,12 @@ export function CryptoAssetPicker({ onSelect, selectedAsset }: CryptoAssetPicker
       
       {filteredAssets.length === 0 && searchTerm && (
         <div className="text-center py-4">
-          <p className="text-gray-400">No assets found matching "{searchTerm}"</p>
+          <p className="text-gray-400 text-sm">No assets found matching "{searchTerm}"</p>
         </div>
       )}
       
       {!searchTerm && (
-        <div className="text-center text-sm text-gray-400">
+        <div className="text-center text-xs text-gray-400">
           Showing top 30 assets by market cap. Search to find more from 150+ available.
         </div>
       )}

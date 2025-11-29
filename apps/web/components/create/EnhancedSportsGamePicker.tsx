@@ -176,7 +176,9 @@ export function EnhancedSportsGamePicker({
       {/* Header with league selector and refresh */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <h3 className="text-xl font-semibold text-white">Select {league} Game</h3>
+          <h3 className="text-xl md:text-2xl font-light tracking-tight text-white">
+            Select {league} Game
+          </h3>
           {onLeagueChange && (
             <button
               onClick={() => onLeagueChange(league === 'NBA' ? 'NFL' : 'NBA')}
@@ -212,10 +214,10 @@ export function EnhancedSportsGamePicker({
                   setCustomDateRange(null);
                 }
               }}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors border ${
                 activeFilter === chip.id
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  ? 'bg-blue-600/90 text-white border-blue-400/80 shadow-lg shadow-blue-500/30'
+                  : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10'
               }`}
             >
               {chip.label}
@@ -225,34 +227,37 @@ export function EnhancedSportsGamePicker({
 
         {/* Custom date picker */}
         {showCustomDatePicker && (
-          <form onSubmit={handleCustomDateSubmit} className="bg-gray-800 p-4 rounded-lg space-y-3">
+          <form
+            onSubmit={handleCustomDateSubmit}
+            className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4 space-y-3"
+          >
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm text-gray-300 mb-1">Start Date</label>
+                <label className="block text-xs font-medium text-gray-300 mb-1">Start Date</label>
                 <input
                   type="date"
                   name="startDate"
                   required
-                  className="w-full px-3 py-2 bg-gray-700 text-white rounded border border-gray-600 focus:border-blue-500"
+                  className="w-full px-3 py-2 bg-black/40 text-white rounded-xl border border-white/10 focus:border-blue-500 focus:outline-none"
                 />
               </div>
               <div>
-                <label className="block text-sm text-gray-300 mb-1">End Date</label>
+                <label className="block text-xs font-medium text-gray-300 mb-1">End Date</label>
                 <input
                   type="date"
                   name="endDate"
                   required
-                  className="w-full px-3 py-2 bg-gray-700 text-white rounded border border-gray-600 focus:border-blue-500"
+                  className="w-full px-3 py-2 bg-black/40 text-white rounded-xl border border-white/10 focus:border-blue-500 focus:outline-none"
                 />
               </div>
             </div>
             {dateError && (
-              <div className="text-red-400 text-sm">{dateError}</div>
+              <div className="text-red-400 text-xs">{dateError}</div>
             )}
             <div className="flex space-x-2">
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm"
+                className="px-4 py-2 rounded-full text-xs font-medium bg-blue-600 text-white hover:bg-blue-500 transition-colors"
               >
                 Apply
               </button>
@@ -262,7 +267,7 @@ export function EnhancedSportsGamePicker({
                   setShowCustomDatePicker(false);
                   setDateError(null);
                 }}
-                className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded text-sm"
+                className="px-4 py-2 rounded-full text-xs font-medium bg-white/5 text-gray-200 border border-white/10 hover:bg-white/10 transition-colors"
               >
                 Cancel
               </button>
@@ -294,7 +299,7 @@ export function EnhancedSportsGamePicker({
       </div>
 
       {/* Subtitle with count and date range */}
-      <div className="text-sm text-gray-400">
+      <div className="text-xs md:text-sm text-gray-400">
         Showing {totalCount} games • {formatDateRangeDisplay()} (UTC shown on cards)
       </div>
 
@@ -305,7 +310,7 @@ export function EnhancedSportsGamePicker({
           placeholder="Search by team name or venue..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 bg-gray-800 text-white placeholder-gray-400 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none"
+          className="w-full pl-10 pr-4 py-3 rounded-2xl bg-black/40 text-white placeholder-gray-500 border border-white/10 focus:border-blue-500 focus:outline-none backdrop-blur"
         />
         <svg className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -390,12 +395,12 @@ export function EnhancedSportsGamePicker({
               <div
                 key={game.id}
                 className={`
-                  relative p-4 rounded-lg border cursor-pointer transition-all
+                  relative p-4 rounded-2xl border cursor-pointer transition-all backdrop-blur
                   ${isSelected 
-                    ? 'border-blue-500 bg-blue-900/20' 
+                    ? 'border-blue-400 bg-blue-900/30 shadow-lg shadow-blue-500/25' 
                     : isDisabled
-                      ? 'border-gray-600 bg-gray-800/50 opacity-60 cursor-not-allowed'
-                      : 'border-gray-600 bg-gray-800 hover:border-blue-400 hover:bg-gray-750'
+                      ? 'border-white/10 bg-white/5 opacity-60 cursor-not-allowed'
+                      : 'border-white/10 bg-white/5 hover:border-blue-400 hover:bg-white/10'
                   }
                 `}
                 onClick={() => !isDisabled && handleGameSelect(game)}
