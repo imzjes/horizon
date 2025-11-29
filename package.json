@@ -6,7 +6,7 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "pnpm --filter web exec next build",
+    "build": "pnpm exec next build apps/web",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean"
