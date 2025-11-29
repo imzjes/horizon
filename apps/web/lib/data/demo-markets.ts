@@ -14,6 +14,14 @@ export interface DemoMarket {
    * derive YES probability from currentProbabilities[0].
    */
   yesProbability?: number;
+  /**
+   * Optional convenience fields for UI components that expect
+   * USD-denominated liquidity/volume and LP supply values.
+   * When omitted, components should fall back to totalLiquidity/totalVolume.
+   */
+  liquidityUsd?: number;
+  volumeUsd?: number;
+  totalLpSupply?: bigint;
   totalLiquidity: number;
   totalVolume: number;
   participants: number;
