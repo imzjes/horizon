@@ -36,6 +36,12 @@ export interface DemoMarket {
    * this typically mirrors the underlying game's sourceUrl.
    */
   primarySource?: string;
+  /**
+   * Optional lifecycle status for demo markets so that the
+   * detail page can render resolved/active badges consistently
+   * with on-chain markets.
+   */
+  status?: 'active' | 'resolved' | 'cancelled';
   priceHistory: Array<{
     timestamp: string;
     probabilities: number[];
