@@ -11,6 +11,9 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean"
   },
+  "dependencies": {
+    "next": "^14.2.5"
+  },
   "devDependencies": {
     "turbo": "^1.10.7"
   },
