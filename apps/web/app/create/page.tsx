@@ -231,50 +231,42 @@ export default function CreatePage() {
             <div className="space-y-4">
               {!state.selectedLeague ? (
                 <div className="space-y-3">
-                  <h3 className="text-lg font-semibold text-white">Choose League</h3>
+                  <h3 className="text-lg font-light tracking-tight text-white">Choose League</h3>
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       onClick={() => setSelectedLeague('NBA')}
-                      className="bg-orange-600/20 border border-orange-600/30 hover:bg-orange-600/30 text-orange-400 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
+                      className="bg-white/5 border border-white/10 hover:bg-white/10 text-orange-300 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
                     >
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M8 12h8"/>
-                        <path d="M12 8v8"/>
-                      </svg>
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-orange-500/20 text-lg">
+                        🏀
+                      </span>
                       NBA
                     </button>
                     <button
                       onClick={() => setSelectedLeague('NFL')}
-                      className="bg-green-600/20 border border-green-600/30 hover:bg-green-600/30 text-green-400 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
+                      className="bg-white/5 border border-white/10 hover:bg-white/10 text-emerald-300 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
                     >
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                        <ellipse cx="12" cy="12" rx="10" ry="6"/>
-                        <path d="M2 12h20"/>
-                      </svg>
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500/20 text-lg">
+                        🏈
+                      </span>
                       NFL
                     </button>
                     <button
                       onClick={() => setSelectedLeague('MLS')}
-                      className="bg-blue-600/20 border border-blue-600/30 hover:bg-blue-600/30 text-blue-400 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
+                      className="bg-white/5 border border-white/10 hover:bg-white/10 text-sky-300 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
                     >
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M8 12h8"/>
-                        <path d="M12 8v8"/>
-                        <circle cx="12" cy="12" r="3"/>
-                      </svg>
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-sky-500/20 text-lg">
+                        ⚽
+                      </span>
                       MLS
                     </button>
                     <button
                       onClick={() => setSelectedLeague('NHL')}
-                      className="bg-red-600/20 border border-red-600/30 hover:bg-red-600/30 text-red-400 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
+                      className="bg-white/5 border border-white/10 hover:bg-white/10 text-violet-300 font-light py-3 px-4 rounded-2xl transition-all backdrop-blur flex items-center gap-2"
                     >
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                        <path d="M2 17l10 5 10-5"/>
-                        <path d="M2 12l10 5 10-5"/>
-                      </svg>
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-violet-500/20 text-lg">
+                        🏒
+                      </span>
                       NHL
                     </button>
                   </div>
